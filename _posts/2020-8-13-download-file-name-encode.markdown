@@ -218,7 +218,7 @@ public String download(String serverFileName, HttpServletRequest request, HttpSe
 
 根据下图 statcounter 统计的 2019 年中国市场浏览器占有率，课代表设计了一个包含中文，英文，空格的文件名 `下载-down test .txt`用来测试
 
-![111](C:\Users\Admin\Desktop\111.png)
+![111](zhengxl5566.github.io\img\download-file-name-encode/browser-ranking.png)
 
 测试结果：
 

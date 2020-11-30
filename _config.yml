@@ -21,7 +21,7 @@
 title: 郑晓龙的博客
 email: zhengxl5566@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  一个 Java 程序员技术沉淀的地方
+  一个 Java 程序员沉淀技术的地方
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb

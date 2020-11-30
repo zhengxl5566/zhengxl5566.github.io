@@ -100,6 +100,7 @@ age 不能为空
 | @Null            | 为null                             |
 | @Past            | 必须是过去的时间                   |
 | @PastOrPresent   | 必须是过去的时间，包含现在         |
+| @Pattern   | 必须满足正则表达式 |
 | @PositiveOrZero  | 正数或0                            |
 | @Size            | 校验容器的元素个数                 |
 

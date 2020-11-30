@@ -2,7 +2,7 @@
 layout: post
 title:  "下载的附件名总乱码？你该去读一下 RFC 文档了！"
 date:   2020-8-13 08:00:00 +0800
-categories: java
+categories: Java
 ---
 
 > 纸上得来终觉浅，绝知此事要躬行

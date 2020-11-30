@@ -7,7 +7,7 @@ categories: Java
 Filter 是 JavaEE 中 Servlet 规范的一个组件，位于包`javax.servlet` 中，它可以在 HTTP 请求到达 Servlet 之前，被一个或多个Filter处理。
 
 它的工作流程如图：
-![image](https://zhengxl5566.github.io\img\using-filter-in-springboot/filter.png)
+![image](https://zhengxl5566.github.io/img/article-img/2020-07/filter.png)
 
 
 Filter的这个特性在生产环境中有很广泛的应用，如：修改请求和响应、防止xss攻击、包装二进制流使其可以多次读，等等。

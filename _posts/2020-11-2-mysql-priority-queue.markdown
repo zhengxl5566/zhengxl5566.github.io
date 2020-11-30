@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "POJO类中布尔类型为啥不让用isXxx命名"
+title:  "深入浅出 MySQL 优先队列"
 date:   2020-6-18 08:00:00 +0800
 categories: Java
 ---
@@ -215,18 +215,18 @@ SELECT * FROM `information_schema`.`OPTIMIZER_TRACE`\G;
 **友情提示：图中的小顶堆以 category 值的大小排序**
 
 1. 取前五条数据构成一个小顶堆：
-   ![heap1.png](https://zhengxl5566.github.io\img\mysql-priority-queue/heap1.png)
+   ![heap1.png](https://zhengxl5566.github.io/img/article-img/2020-11/heap1.png)
 
 2. 取下一行数据(6,2),发现 2 小于当前堆中最大的`category` 3，于是把(2,3)从堆中删掉，把(6,2) 入堆：
-   ![heap2.png](https://zhengxl5566.github.io\img\mysql-priority-queue/heap2.png)
+   ![heap2.png](https://zhengxl5566.github.io/img/article-img/2020-11/heap2.png)
 
 3. 重复步骤 2，直至符合查询条件的数据都经历过比较入堆，最终堆中数据如图：
-   ![heap3.png](https://zhengxl5566.github.io\img\mysql-priority-queue/heap3.png)
+   ![heap3.png](https://zhengxl5566.github.io/img/article-img/2020-11/heap3.png)
 
 以上就是通过 priority queue 找到 最小的 5 行 category 数据的执行过程。
 
  最后我们将其出堆即可得到结果，每次出堆最小元素后将最后一个元素放入堆顶，按照小顶堆重新堆化，过程如图：
-![heap-out.png](https://zhengxl5566.github.io\img\mysql-priority-queue/heap-out.png)
+![heap-out.png](https://zhengxl5566.github.io/img/article-img/2020-11/heap-out.png)
 
 可以看到，这个结果和`select * from ratings order by category limit 5;`的输出一致
 

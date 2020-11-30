@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "下载的附件名总乱码？你该去读一下 RFC 文档了！"
-date:   2020-11-30 08:57:00 +0800
+date:   2020-8-13 08:00:00 +0800
 categories: java
 ---
 
@@ -269,6 +269,8 @@ public String download(String serverFileName, HttpServletRequest request, HttpSe
 [6]RFC 1738: *https://tools.ietf.org/html/rfc1738*
 
 [7]When to encode space to plus (+) or %20?: *https://stackoverflow.com/questions/2678551/when-to-encode-space-to-plus-or-20*
+
+文中内容已合并进入开源框架 [若依](https://gitee.com/y_project/RuoYi) （pull request：[196](https://gitee.com/y_project/RuoYi/pulls/196)）
 
 ---
 ![](https://zhengxl5566.github.io/img/javaHelper/qr-code-1270x300.png)

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "深入浅出 MySQL 优先队列"
-date:   2020-6-18 08:00:00 +0800
+date:   2020-11-2 08:00:00 +0800
 categories: Java
 ---
 > 英语和算法是程序员的两条腿

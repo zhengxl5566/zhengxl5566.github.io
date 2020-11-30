@@ -219,7 +219,6 @@ SELECT * FROM `information_schema`.`OPTIMIZER_TRACE`\G;
 
 2. 取下一行数据(6,2),发现 2 小于当前堆中最大的`category` 3，于是把(2,3)从堆中删掉，把(6,2) 入堆：
    ![heap2.png](https://zhengxl5566.github.io/img/article-img/2020-11/heap2.png)
-
 3. 重复步骤 2，直至符合查询条件的数据都经历过比较入堆，最终堆中数据如图：
    ![heap3.png](https://zhengxl5566.github.io/img/article-img/2020-11/heap3.png)
 

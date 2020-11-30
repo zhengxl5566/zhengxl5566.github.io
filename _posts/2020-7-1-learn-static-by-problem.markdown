@@ -226,4 +226,4 @@ protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundE
 
 ---
 
-![qr-code-1270x300](https://zhengxl5566.github.io/img/javaHelper/qr-code-1270x300.png)
+![qr-code-1270x300.jpg](https://zhengxl5566.github.io/img/java-helper/qr-code-1270x300.jpg)

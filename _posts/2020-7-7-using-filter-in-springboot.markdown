@@ -141,4 +141,4 @@ PS：其实还有第四种，web.xml配置，不过这都2020年了，用 Spring
 
 ---
 
-![qr-code-1270x300](https://zhengxl5566.github.io/img/javaHelper/qr-code-1270x300.png)
+![qr-code-1270x300.jpg](https://zhengxl5566.github.io/img/java-helper/qr-code-1270x300.jpg)

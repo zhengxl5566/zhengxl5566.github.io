@@ -277,5 +277,5 @@ public String download(String serverFileName, HttpServletRequest request, HttpSe
 文中内容已合并进入开源框架 [若依](https://gitee.com/y_project/RuoYi) （pull request：[196](https://gitee.com/y_project/RuoYi/pulls/196)）
 
 ---
-![](https://zhengxl5566.github.io/img/javaHelper/qr-code-1270x300.png)
+![qr-code-1270x300.jpg](https://zhengxl5566.github.io/img/java-helper/qr-code-1270x300.jpg)
 

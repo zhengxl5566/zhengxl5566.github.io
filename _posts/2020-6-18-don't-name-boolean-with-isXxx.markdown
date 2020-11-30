@@ -142,4 +142,4 @@ SpringBoot集成了jackson，默认使用jackson来进行json序列化，经过�
 
 ---
 
-![qr-code-1270x300](https://zhengxl5566.github.io/img/javaHelper/qr-code-1270x300.png)
+![qr-code-1270x300.jpg](https://zhengxl5566.github.io/img/java-helper/qr-code-1270x300.jpg)

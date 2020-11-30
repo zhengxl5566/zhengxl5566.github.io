@@ -263,4 +263,4 @@ PS：会不会有人问：关我鸟事，我从没写过带 LIMIT 的 SQL 啊！
 
 ---
 
-![qr-code-1270x300](https://zhengxl5566.github.io/img/javaHelper/qr-code-1270x300.png)
+![qr-code-1270x300.jpg](https://zhengxl5566.github.io/img/java-helper/qr-code-1270x300.jpg)

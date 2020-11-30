@@ -13,5 +13,5 @@ permalink: /about/
 * [掘金](https://juejin.cn/user/2647279732029118)
 * 微信公众号：**Java 课代表** （推荐）
 
-![qr-code-1270x300](https://zhengxl5566.github.io/img/javaHelper/qr-code-1270x300.png)
+![qr-code-1270x300.jpg](https://zhengxl5566.github.io/img/java-helper/qr-code-1270x300.jpg)
 

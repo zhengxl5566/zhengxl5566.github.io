@@ -222,7 +222,7 @@ protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundE
 
 附运行结果：
 
-![static-execute-result.png](https://zhengxl5566.github.io/img/article-img/2020-11/static-execute-result.png)
+![static-execute-result.png](https://zhengxl5566.github.io/img/article-img/2020-07/static-execute-result.png)
 
 ---
 

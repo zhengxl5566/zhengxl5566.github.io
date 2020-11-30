@@ -218,7 +218,7 @@ public String download(String serverFileName, HttpServletRequest request, HttpSe
 
 根据下图 statcounter 统计的 2019 年中国市场浏览器占有率，课代表设计了一个包含中文，英文，空格的文件名 `下载-down test .txt`用来测试
 
-![111](zhengxl5566.github.io\img\download-file-name-encode/browser-ranking.png)
+![browser-ranking.png](https://zhengxl5566.github.io/img/download-file-name-encode/browser-ranking.png)
 
 测试结果：
 
@@ -269,6 +269,10 @@ public String download(String serverFileName, HttpServletRequest request, HttpSe
 [6]RFC 1738: *https://tools.ietf.org/html/rfc1738*
 
 [7]When to encode space to plus (+) or %20?: *https://stackoverflow.com/questions/2678551/when-to-encode-space-to-plus-or-20*
+
+---
+
+2020年8月19日更新：
 
 文中内容已合并进入开源框架 [若依](https://gitee.com/y_project/RuoYi) （pull request：[196](https://gitee.com/y_project/RuoYi/pulls/196)）
 

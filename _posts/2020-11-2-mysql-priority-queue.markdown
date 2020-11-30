@@ -215,6 +215,7 @@ SELECT * FROM `information_schema`.`OPTIMIZER_TRACE`\G;
 **友情提示：图中的小顶堆以 category 值的大小排序**
 
 1. 取前五条数据构成一个小顶堆：
+   
    ![heap1.png](https://zhengxl5566.github.io/img/article-img/2020-11/heap1.png)
 
 2. 取下一行数据(6,2),发现 2 小于当前堆中最大的`category` 3，于是把(2,3)从堆中删掉，把(6,2) 入堆：

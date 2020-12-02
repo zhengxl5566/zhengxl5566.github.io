@@ -3,6 +3,8 @@ layout: post
 title:  "POJO类中布尔类型为啥不让用isXxx命名"
 date:   2020-6-18 08:00:00 +0800
 categories: Java
+author: Java课代表
+excerpt: POJO 类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起序列化错误
 ---
 > 源码面前，了无秘密
 

@@ -3,6 +3,8 @@ layout: post
 title:  "一道题搞定 static 关键字"
 date:   2020-7-1 08:00:00 +0800
 categories: Java
+author: Java课代表
+excerpt: 基于一道面试题，考察 static 关键字
 ---
 > 基础不牢，地动山摇
 

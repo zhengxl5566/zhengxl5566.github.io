@@ -26,7 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
-github_username:  zhengxl5566
+github_username: zhengxl5566
 
 # 样式设置
 # 显示文章摘要，关键字：excerpt
@@ -57,9 +57,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-# Gitalk settings
-comment_gitalk_clientId: 793c173fc37214e64a65
-comment_gitalk_clientSecret: 729757cb78e858e31eb1cc6963554717bce43cb2
-comment_gitalk_repo: zhengxl5566.github.io
-github_username: zhengxl5566

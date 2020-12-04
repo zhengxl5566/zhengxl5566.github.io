@@ -56,3 +56,9 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Gitalk settings
+comment_gitalk_clientId: 793c173fc37214e64a65
+comment_gitalk_clientSecret: 729757cb78e858e31eb1cc6963554717bce43cb2
+comment_gitalk_repo: zhengxl5566.github.io
+github_username: zhengxl5566

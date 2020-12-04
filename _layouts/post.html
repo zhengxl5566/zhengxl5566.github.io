@@ -33,7 +33,7 @@ layout: default
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script>
-  const path = location.pathname;
+  var path = location.pathname;
   path = path.substr(path.lastIndexOf('/') + 1);
   const gitalk = new Gitalk({
     clientID: '624ebadbb7833a525b34',

@@ -2,7 +2,7 @@
 layout: post
 title:  "SpringBoot 中使用 Filter 的正确姿势"
 date:   2020-7-7 08:00:00 +0800
-categories: Java
+category: Java
 author: Java课代表
 excerpt: 三种在 SpringBoot 中使用拦截器的方式
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "深入浅出 MySQL 优先队列"
 date:   2020-11-2 08:00:00 +0800
-categories: [MySQL]
+category: MySQL
 author: Java课代表
 excerpt: MySQL 5.6 及以上版本的 order by limit 顺序问题讨论
 ---

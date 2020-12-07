@@ -2,7 +2,7 @@
 layout: post
 title:  "使用Spring Validation优雅地校验参数"
 date:   2020-7-29 08:00:00 +0800
-categories: Java
+category: Java
 author: Java课代表
 excerpt: 使用注解轻松校验参数
 ---

@@ -4,6 +4,3 @@
 
 layout: home
 ---
-
-![qr-code-1270x300.jpg](https://zhengxl5566.github.io/img/java-helper/qr-code-1270x300.jpg)
-

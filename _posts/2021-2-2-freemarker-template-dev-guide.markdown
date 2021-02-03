@@ -9,7 +9,7 @@ excerpt: 本文是Freemarker系列的第一篇，面向模板开发人员，主�
 
 本文是Freemarker系列的第一篇，面向模板开发人员，主要介绍 FreeMarker 所使用的 FTL(FreeMarker Template Language) 语法，了解 Freemarker 的基本概念，介绍基本的 FTL 术语 及内置函数，内置指令，方便作为开发手册速查（文中演示所用版本为 2.3.30，实际使用中请根据自己项目版本自查[官网](https://freemarker.apache.org/)）。
 
-本文不会罗列官网API，只在必要时演示其语法，代码工程中有课代表整理的 freemarker api 脑图，配合此文食用可使功力大增！请到 [课代表的 github](https://github.com/zhengxl5566/springboot-demo)自取。
+本文不会罗列官网API，只在必要时演示其语法，代码工程中有课代表整理的 freemarker api 思维导图，配合此文食用可使功力大增！请到 [课代表的 github](https://github.com/zhengxl5566/springboot-demo)自取。
 
 ## 1.FreeMarker 是什么
 
@@ -123,7 +123,7 @@ Controller中添加到 model 中的数据是如何组织的呢？这就需要了
   |       |
   |       +- size = "medium"
   |       |
-  |       +- price = 4999！
+  |       +- price = 4999
   |
   +- misc
       |
@@ -140,7 +140,7 @@ FTL 里**常用的数据类型**就这三类：哈希（hashe）,标量（scalar
 
 ## 4.FTL 语法
 
-FreeMarker只认如下三种语法：
+FreeMarker 只认如下三种语法：
 1. 插值：${...} ，Freemarker 会将里面的变量替换为实际值
 2. FTL 标签(tags)：结构上类似HTML的标签，都是用`<>`包裹起来，普通标签以`<#`开头，用户自定义标签以`<@`开头，如`<#if true>true thing<#/if>`，`<@myDirect></@myDirect>`
 > 你会看到两种叫法，1：标签（tags），2：指令（directive）。举个例子：`<#if></#if>`叫标签； 标签里面的`if`是指令，可以类比于html中的标签（如：`<table></table>`）和元素（如：`table`）。不过，把标签和指令认为是**同义词**也没有问题。
@@ -230,7 +230,19 @@ include 指令可以把一个模板的内容插入到另一个模板中（官方
 ```
 ### import 指令
 
-import 可以将模板中定义的变量引入当前模板，并在当前模板中使用。它和 include 的主要区别就是 import 可以将变量封装到新的命名空间中（后文会介绍 import 和 include 的对比）
+import 可以将模板中定义的变量引入当前模板，并在当前模板中使用。它和 include 的主要区别就是 import 可以将变量封装到新的命名空间中（后文会介绍 import 和 include 的对比）。
+
+例如：模板 /libs/commons.ftl 里面写了很多公共方法，想在其他模板里引用，只需要在其他模板的开头写上：
+
+```
+<#import "/libs/commons.ftl" as com>
+```
+
+后续想使用/libs/commons.ftl 中的 copyright 方法，可以直接使用：
+
+```html
+<@com.copyright date="1999-2002"/>
+```
 
 ### assign 指令
 
@@ -499,6 +511,10 @@ other@example.com, other@example.com, other@example.com
 总体来说，Freemarker 是一个比较简单，容易上手的模板引擎，只要掌握了本文所提及的基本概念，直接上手开发是完全没问题的。
 
 在本文写作过程中，课代表意识到纯文字表达的局限性，又不能全文罗列和翻译API，于是整理了一个思维导图，将Freemarker 的各类指令，内置函数及其官网示例全都翻译整理了进去。在平时开发过程中极大提升了开发效率，需要的同学请到 [课代表的 github](https://github.com/zhengxl5566/springboot-demo)自取。
+
+最后附上思维导图镇楼：
+
+![freemarker-api-xmind.png](https://zhengxl5566.github.io/img/article-img/2021-2/freemarker-api-xmind.png)
 
 
 

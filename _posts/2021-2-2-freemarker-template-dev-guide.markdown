@@ -512,9 +512,5 @@ other@example.com, other@example.com, other@example.com
 
 在本文写作过程中，课代表意识到纯文字表达的局限性，又不能全文罗列和翻译API，于是整理了一个思维导图，将Freemarker 的各类指令，内置函数及其官网示例全都翻译整理了进去。在平时开发过程中极大提升了开发效率，需要的同学请到 [课代表的 github](https://github.com/zhengxl5566/springboot-demo)自取。
 
-最后附上思维导图镇楼：
-
-![freemarker-api-xmind.png](https://zhengxl5566.github.io/img/article-img/2021-2/freemarker-api-xmind.png)
-
 
 

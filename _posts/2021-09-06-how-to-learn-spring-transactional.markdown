@@ -1,9 +1,11 @@
+---
 layout: post
 title:  "Spring 声明式事务应该怎么学？"
 date:   2021-9--6 12:00:00 +0800
 category: Java
 author: Java课代表
 excerpt: 你要是认为try catch 吃异常后声明式事务不会生效，那真得好好看看这篇了！
+---
 
 ## 1、引言
 

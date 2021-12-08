@@ -259,17 +259,17 @@ public class MybatisAutoConfiguration implements InitializingBean {
 
 一图胜千言，其本质就是层层注入：
 
-![mybatis-inject](https://zhengxl5566.github.io/img/article-img/2021-2/mybatis-inject.png)
+![mybatis-inject](https://zhengxl5566.github.io/img/article-img/2021-11/mybatis-inject.png)
 
 ## 四、由单变多
 
 有了二、三小结的知识储备，创建多数据源的理论基础就有了：搞两套`DataSource`，搞两套层层注入，如图：
 
-![mybatis-inject](https://zhengxl5566.github.io/img/article-img/2021-2/mybatis-inject2.png)
+![mybatis-inject](https://zhengxl5566.github.io/img/article-img/2021-11/mybatis-inject2.png)
 
 接下来我们就照搬自动配置单数据源的套路配置一下多数据源，顺序如下：
 
-![step](https://zhengxl5566.github.io/img/article-img/2021-2/step.png)
+![step](https://zhengxl5566.github.io/img/article-img/2021-11/step.png)
 
 首先设计一下配置信息，单数据源时，配置前缀为`spring.datasource`，为了支持多个，我们在后面再加一层，`yml`如下：
 

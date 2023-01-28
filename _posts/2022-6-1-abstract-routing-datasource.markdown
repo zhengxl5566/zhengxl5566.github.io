@@ -19,7 +19,6 @@ excerpt: Spring提供了一个AbstractRoutingDataSource类，用来实现对多�
 
 先看类上的注释：
 
-
 > Abstract {@link javax.sql.DataSource} implementation that routes {@link #getConnection()}
 > calls to one of various target DataSources based on a lookup key. The latter is usually
 > (but not necessarily) determined through some thread-bound transaction context.
@@ -31,78 +30,77 @@ excerpt: Spring提供了一个AbstractRoutingDataSource类，用来实现对多�
 ```java
 public abstract class AbstractRoutingDataSource extends AbstractDataSource implements InitializingBean {
 
-	//目标 DataSource Map，可以装很多个 DataSource
-	@Nullable
-	private Map<Object, Object> targetDataSources;
-	
-	@Nullable
-	private Map<Object, DataSource> resolvedDataSources;
+    //目标 DataSource Map，可以装很多个 DataSource
+    @Nullable
+    private Map<Object, Object> targetDataSources;
 
-	//Bean初始化时，将 targetDataSources 遍历并解析后放入 resolvedDataSources
-	@Override
-	public void afterPropertiesSet() {
-		if (this.targetDataSources == null) {
-			throw new IllegalArgumentException("Property 'targetDataSources' is required");
-		}
-		this.resolvedDataSources = CollectionUtils.newHashMap(this.targetDataSources.size());
-		this.targetDataSources.forEach((key, value) -> {
-			Object lookupKey = resolveSpecifiedLookupKey(key);
-			DataSource dataSource = resolveSpecifiedDataSource(value);
-			this.resolvedDataSources.put(lookupKey, dataSource);
-		});
-		if (this.defaultTargetDataSource != null) {
-			this.resolvedDefaultDataSource = resolveSpecifiedDataSource(this.defaultTargetDataSource);
-		}
-	}
-	
-	@Override
-	public Connection getConnection() throws SQLException {
-		return determineTargetDataSource().getConnection();
-	}
+    @Nullable
+    private Map<Object, DataSource> resolvedDataSources;
 
-	/**
-	 * Retrieve the current target DataSource. Determines the
-	 * {@link #determineCurrentLookupKey() current lookup key}, performs
-	 * a lookup in the {@link #setTargetDataSources targetDataSources} map,
-	 * falls back to the specified
-	 * {@link #setDefaultTargetDataSource default target DataSource} if necessary.
-	 * @see #determineCurrentLookupKey()
-	 */
-	 //根据 #determineCurrentLookupKey()返回的lookup key 去解析好的数据源 Map 里取相应的数据源
-	protected DataSource determineTargetDataSource() {
-		Assert.notNull(this.resolvedDataSources, "DataSource router not initialized");
-		// 当前 lookupKey 的值由用户自己实现↓
+    //Bean初始化时，将 targetDataSources 遍历并解析后放入 resolvedDataSources
+    @Override
+    public void afterPropertiesSet() {
+        if (this.targetDataSources == null) {
+            throw new IllegalArgumentException("Property 'targetDataSources' is required");
+        }
+        this.resolvedDataSources = CollectionUtils.newHashMap(this.targetDataSources.size());
+        this.targetDataSources.forEach((key, value) -> {
+            Object lookupKey = resolveSpecifiedLookupKey(key);
+            DataSource dataSource = resolveSpecifiedDataSource(value);
+            this.resolvedDataSources.put(lookupKey, dataSource);
+        });
+        if (this.defaultTargetDataSource != null) {
+            this.resolvedDefaultDataSource = resolveSpecifiedDataSource(this.defaultTargetDataSource);
+        }
+    }
+
+    @Override
+    public Connection getConnection() throws SQLException {
+        return determineTargetDataSource().getConnection();
+    }
+
+    /**
+     * Retrieve the current target DataSource. Determines the
+     * {@link #determineCurrentLookupKey() current lookup key}, performs
+     * a lookup in the {@link #setTargetDataSources targetDataSources} map,
+     * falls back to the specified
+     * {@link #setDefaultTargetDataSource default target DataSource} if necessary.
+     * @see #determineCurrentLookupKey()
+     */
+     //根据 #determineCurrentLookupKey()返回的lookup key 去解析好的数据源 Map 里取相应的数据源
+    protected DataSource determineTargetDataSource() {
+        Assert.notNull(this.resolvedDataSources, "DataSource router not initialized");
+        // 当前 lookupKey 的值由用户自己实现↓
         Object lookupKey = determineCurrentLookupKey();
-		DataSource dataSource = this.resolvedDataSources.get(lookupKey);
-		if (dataSource == null && (this.lenientFallback || lookupKey == null)) {
-			dataSource = this.resolvedDefaultDataSource;
-		}
-		if (dataSource == null) {
-			throw new IllegalStateException("Cannot determine target DataSource for lookup key [" + lookupKey + "]");
-		}
-		return dataSource;
-	}
-	
-	/**
-	 * Determine the current lookup key. This will typically be
-	 * implemented to check a thread-bound transaction context.
-	 * <p>Allows for arbitrary keys. The returned key needs
-	 * to match the stored lookup key type, as resolved by the
-	 * {@link #resolveSpecifiedLookupKey} method.
-	 */
-	// 该方法用来决定lookup key，通常用线程绑定的上下文来实现
-	@Nullable
-	protected abstract Object determineCurrentLookupKey();
-	
-	// 省略其余代码...
+        DataSource dataSource = this.resolvedDataSources.get(lookupKey);
+        if (dataSource == null && (this.lenientFallback || lookupKey == null)) {
+            dataSource = this.resolvedDefaultDataSource;
+        }
+        if (dataSource == null) {
+            throw new IllegalStateException("Cannot determine target DataSource for lookup key [" + lookupKey + "]");
+        }
+        return dataSource;
+    }
+
+    /**
+     * Determine the current lookup key. This will typically be
+     * implemented to check a thread-bound transaction context.
+     * <p>Allows for arbitrary keys. The returned key needs
+     * to match the stored lookup key type, as resolved by the
+     * {@link #resolveSpecifiedLookupKey} method.
+     */
+    // 该方法用来决定lookup key，通常用线程绑定的上下文来实现
+    @Nullable
+    protected abstract Object determineCurrentLookupKey();
+
+    // 省略其余代码...
 
 }
-
 ```
 
 首先看类图
 
-![AbstractRoutingDataSource-uml](/AbstractRoutingDataSource-uml.png)
+![AbstractRoutingDataSource-uml](https://zhengxl5566.github.io/img/article-img/2022-6/AbstractRoutingDataSource-uml.png)
 
 是个`DataSource`，并且实现了`InitializingBean`，说明有`Bean`的初始化操作。
 
@@ -335,11 +333,11 @@ public List<User> getAllUsersFromSecond() {
 关于切面有两个细节需要注意：
 
 1. 需要指定优先级高于声明式事务
-
+   
    原因：声明式事务事务的本质也是 AOP，其只对开启时使用的数据源生效，所以一定要在切换到指定数据源之后再开启，声明式事务默认的优先级是最低级，这里只需要设定自定义的数据源切面的优先级比它高即可。
 
 2. 业务执行完之后一定要清空上下文
-
+   
    原因：假设方法 A 使用`@WithDataSource("second")`指定走"second"数据源，紧跟着方法 B 不写注解，期望走默认的`first`数据源。但由于方法A放入上下文的`lookupKey`此时还是"second"并未删除，所以导致方法 B 执行的数据源与期望不符。
 
 ## 四、回顾
@@ -351,10 +349,10 @@ public List<User> getAllUsersFromSecond() {
 文中相关代码已上传[课代表的github](https://github.com/zhengxl5566/springboot-demo)
 
 > 特别说明：
->
+> 
 > 样例中为了减少代码层级，让展示更直观，在 controller 层写了事务注解，实际开发中可别这么干，controller 层的任务是绑定、校验参数，封装返回结果，尽量不要在里面写业务！
 
-##  五、优化
+## 五、优化
 
 对于一般的多数据源使用场景，本文方案已足够覆盖，可以实现灵活切换。
 
